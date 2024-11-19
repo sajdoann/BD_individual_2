@@ -1,0 +1,107 @@
+    (algorithm)   (n)  Mode  Cnt       Score       Error  Units
+       classic     8  avgt    5       0.001 �     0.001  ms/op
+       classic    32  avgt    5       0.043 �     0.002  ms/op
+       classic    64  avgt    5       0.465 �     0.072  ms/op
+       classic   128  avgt    5       3.950 �     1.055  ms/op
+       classic   256  avgt    5      30.748 �     0.588  ms/op
+       classic   512  avgt    5     298.109 �    55.046  ms/op
+       classic  1024  avgt    5   10000.595 �   497.216  ms/op
+      strassen     8  avgt    5       0.001 �     0.001  ms/op
+      strassen    32  avgt    5       0.046 �     0.001  ms/op
+      strassen    64  avgt    5       0.365 �     0.008  ms/op
+      strassen   128  avgt    5     417.982 �    88.627  ms/op
+      strassen   256  avgt    5    2715.299 �   116.171  ms/op
+      strassen   512  avgt    5   20809.815 �  4793.685  ms/op
+      strassen  1024  avgt    5  130910.558 � 11590.816  ms/op
+
+
+       classic   16           0  avgt    5   0.008 �  0.003  ms/op
+       classic   32           0  avgt    5   0.043 �  0.002  ms/op
+       classic   64           0  avgt    5   0.355 �  0.004  ms/op
+      strassen   16           0  avgt    5   0.006 �  0.001  ms/op
+      strassen   32           0  avgt    5   0.043 �  0.001  ms/op
+      strassen   64           0  avgt    5   0.349 �  0.019  ms/op
+        sparse   16           0  avgt    5   0.226 �  0.004  ms/op
+        sparse   32           0  avgt    5   2.079 �  0.757  ms/op
+        sparse   64           0  avgt    5  16.488 �  0.703  ms/op
+         cache   16           0  avgt    5   0.006 �  0.001  ms/op
+         cache   32           0  avgt    5   0.034 �  0.002  ms/op
+         cache   64           0  avgt    5   0.264 �  0.013  ms/op
+          loop   16           0  avgt    5   0.006 �  0.001  ms/op
+          loop   32           0  avgt    5   0.043 �  0.001  ms/op
+          loop   64           0  avgt    5   0.344 �  0.052  ms/op
+       classic  100           0  avgt    5    1.339 � 0.115  ms/op
+       classic  128           0  avgt    5    2.841 � 0.036  ms/op
+      strassen  128           0  avgt    5  368.931 � 6.743  ms/op
+        sparse  100           0  avgt    5   52.804 � 1.137  ms/op
+        sparse  128           0  avgt    5  113.278 � 1.380  ms/op
+         cache  100           0  avgt    5    1.006 � 0.150  ms/op
+         cache  128           0  avgt    5    2.131 � 0.905  ms/op
+          loop  100           0  avgt    5    1.211 � 0.168  ms/op
+          loop  128           0  avgt    5    2.528 � 0.180  ms/op
+
+Big matrices no sparcity
+       classic  1000           0  avgt    5   11947.335 �    1421.543  ms/op
+       classic  1024           0  avgt    5   11826.100 �    3708.846  ms/op
+      strassen  1000           timeout
+      strassen  1024           0  avgt    5  129925.291 �    7515.714  ms/op
+        sparse  1000           0  avgt    5  233729.185 � 1277204.638  ms/op
+        sparse  1024           0  avgt    5  107254.967 �   85242.248  ms/op
+         cache  1000           0  avgt    5    2691.818 �     519.854  ms/op
+         cache  1024           0  avgt    5    2557.165 �    2362.751  ms/op
+          loop  1000           0  avgt    5   10336.599 �     443.435  ms/op
+          loop  1024           0  avgt    5   11149.146 �     414.924  ms/op
+
+1000 n matrices sparcity test
+  (algorithm)   (n)  (sparsity)  Mode  Cnt      Score      Error  Units
+      classic  1000           0  avgt    5   11947.335 �    1421.543  ms/op
+      classic  1000         0.5  avgt    5  10830.606 � 1635.475  ms/op
+      classic  1000         0.9  avgt    5   9016.672 �  775.084  ms/op
+       sparse  1000           0  avgt    5  233729.185 � 1277204.638  ms/op
+       sparse  1000         0.5  avgt    5  25195.646 � 4119.592  ms/op
+       sparse  1000         0.9  avgt    5   1575.898 �  370.724  ms/op
+       cache  1000           0  avgt    5    2691.818 �     519.854  ms/op
+        cache  1000         0.5  avgt    5   1272.571 �   31.139  ms/op
+        cache  1000         0.9  avgt    5   1274.265 �   40.830  ms/op
+         loop  1000           0  avgt    5   10336.599 �     443.435  ms/op
+         loop  1000         0.5  avgt    5  10378.345 � 1117.307  ms/op
+         loop  1000         0.9  avgt    5  10466.273 �  397.001  ms/op
+  cachesparse (1024)           1000         0.5  avgt    5  24879.145 �  2713.596  ms/op
+  cachesparse  (1024)         1000           0  avgt    5  88705.695 � 11025.141  ms/op
+  cachesparse (1024)          1000         0.9  avgt    5   1821.357 �    85.978  ms/op
+
+ Benchmark                                 (algorithm)  (blockSize)   (n)  (sparsity)  Mode  Cnt       Score       Error  Units
+ cachesparse           64  1000           0  avgt    5  288085.470 � 48316.756  ms/op
+  cachesparse           64  1000         0.5  avgt    5  104181.307 � 27358.376  ms/op
+  cachesparse           64  1000         0.9  avgt    5    6349.095 �   127.332  ms/op
+  cachesparse          128  1000         0.9  avgt    5  3426.382 � 841.556  ms/op
+  cachesparse          256  1000         0.9  avgt    5  2082.317 � 449.113  ms/op
+  cachesparse          512  1000         0.9  avgt    5  1736.803 � 160.070  ms/op
+  cachesparse         1024  1000         0.9  avgt    5  1491.840 � 106.047  ms/op
+  cachesparse         2048  1000         0.9  avgt    5  1493.296 � 136.880  ms/op
+
+ Benchmark                                 (algorithm)  (blockSize)  (n)  (sparsity)  Mode  Cnt   Score    Error  Units
+  MatrixBenchmark.testMatrixMultiplication      classic           16    8           0  avgt    5   0.001 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication      classic           16   16           0  avgt    5   0.006 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication      classic           16   32           0  avgt    5   0.047 �  0.012  ms/op
+MatrixBenchmark.testMatrixMultiplication      classic           16   64           0  avgt    5   0.364 �  0.016  ms/op
+MatrixBenchmark.testMatrixMultiplication     strassen           16    8           0  avgt    5   0.001 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication     strassen           16   16           0  avgt    5   0.006 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication     strassen           16   32           0  avgt    5   0.045 �  0.003  ms/op
+MatrixBenchmark.testMatrixMultiplication     strassen           16   64           0  avgt    5   0.385 �  0.027  ms/op
+MatrixBenchmark.testMatrixMultiplication       sparse           16    8           0  avgt    5   0.043 �  0.024  ms/op
+MatrixBenchmark.testMatrixMultiplication       sparse           16   16           0  avgt    5   0.254 �  0.011  ms/op
+MatrixBenchmark.testMatrixMultiplication       sparse           16   32           0  avgt    5   1.913 �  0.089  ms/op
+MatrixBenchmark.testMatrixMultiplication       sparse           16   64           0  avgt    5  15.335 �  2.871  ms/op
+MatrixBenchmark.testMatrixMultiplication        cache           16    8           0  avgt    5   0.002 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication        cache           16   16           0  avgt    5   0.006 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication        cache           16   32           0  avgt    5   0.030 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication        cache           16   64           0  avgt    5   0.244 �  0.048  ms/op
+MatrixBenchmark.testMatrixMultiplication         loop           16    8           0  avgt    5   0.001 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication         loop           16   16           0  avgt    5   0.006 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication         loop           16   32           0  avgt    5   0.038 �  0.010  ms/op
+MatrixBenchmark.testMatrixMultiplication         loop           16   64           0  avgt    5   0.291 �  0.050  ms/op
+MatrixBenchmark.testMatrixMultiplication  cachesparse           16    8           0  avgt    5   0.032 �  0.001  ms/op
+MatrixBenchmark.testMatrixMultiplication  cachesparse           16   16           0  avgt    5   0.494 �  0.030  ms/op
+MatrixBenchmark.testMatrixMultiplication  cachesparse           16   32           0  avgt    5   4.448 �  0.572  ms/op
+MatrixBenchmark.testMatrixMultiplication  cachesparse           16   64           0  avgt    5  50.957 �  4.229  ms/op
