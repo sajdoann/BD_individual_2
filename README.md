@@ -1,1 +1,4 @@
 # BD_individual_2
+This study investigates optimization techniques for matrix multiplication, focusing on algorithmic improvements, loop unrolling, and cache optimization. The work includes the evaluation of classic matrix multiplication as well as optimized methods such as Strassen's algorithm, loop unrolling, and cache tiling optimization. Sparse matrices, where most elements are zero, are also explored to improve computational efficiency by skipping unnecessary operations. The performance of various algorithms is evaluated using matrices of different sizes and sparsity levels, with particular attention given to the benefits of combining cache optimization with sparse matrix techniques. Results indicate that sparse matrices with cache optimization significantly outperform other methods in terms of execution time and resource usage, especially for large, sparse matrices simulating real-world data.
+
+
