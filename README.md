@@ -11,7 +11,7 @@ This repo explores various optimization techniques for matrix multiplication, ai
 ## Getting Started
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/BD_individual_2.git
+    git clone https://github.com/sajdoann/matrix-multiplication.git
     ```
 2. Run the provided scripts to benchmark matrix multiplication with different optimizations.
 
