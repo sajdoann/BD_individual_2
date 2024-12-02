@@ -13,11 +13,11 @@ import java.util.concurrent.TimeUnit;
 public class MatrixBenchmark {
 
     // possible: any number
-    @Param({ "8", "16", "32", "64"}) // "16", "32", "64"  "100", "128", donneee, "1000", "1024", "2000"
+    @Param({ "1024"}) // "16", "32", "64"  "100", "128", donneee, "1000", "1024", "2000"
     private int n; // Matrix size
 
-    //possible: "classic", "strassen", "sparse", "cache", "loop", "cachesparse"
-    @Param({ "classic", "strassen", "sparse", "cache", "loop", "cachesparse"})
+    //possible: "classic", "strassen", "sparse", "cache", "loop", "cachesparse, "paralel"
+    @Param({ "paralel"})
     private String algorithm;
 
     // possible: <0,1>
@@ -26,6 +26,9 @@ public class MatrixBenchmark {
 
      @Param({ "16"})
      private int blockSize;
+
+     @Param({"1", "5"})
+     private int nThreads;
 
      private double[][] denseA;
     private double[][] denseB;
@@ -75,6 +78,8 @@ public class MatrixBenchmark {
                 return SparseMatrixMultiplication.multiply(sparseA, sparseB);
              case "cachesparse":
                  return CacheAwareSparseMatrixMultiplication.multiply(sparseA, sparseB ,blockSize);
+             case "paralel":
+                 return ParalelMultiplication.multiply(denseA, denseB, nThreads);
             default:
                 throw new IllegalArgumentException("Unknown algorithm: " + algorithm);
         }
